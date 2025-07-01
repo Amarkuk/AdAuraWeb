@@ -1,7 +1,9 @@
-<!-- Updated index.html (Centered Welcome Text and Improved Spacing) --><!DOCTYPE html><html lang="en">
+<!-- index.html (Home Page with Logo and Hamburger Menu) -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AdAura | Home</title>
   <style>
     body {
@@ -20,6 +22,34 @@
       height: 80px;
       margin-bottom: 5px;
     }
+    nav {
+      background: #333;
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      text-align: right;
+      display: block;
+    }
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      text-align: center;
+    }
+    .menu-links a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+    .menu-links a:hover {
+      background-color: #444;
+    }
     main {
       padding: 30px 20px 80px;
       text-align: center;
@@ -37,16 +67,45 @@
       bottom: 0;
       width: 100%;
     }
+    @media (min-width: 600px) {
+      .menu-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .menu-icon {
+        display: none;
+      }
+    }
   </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </head>
 <body>
   <header>
-    <img src="adaura-logo.png" alt="AdAura Logo" class="logo">
+    <img src="adaura-logo.png" alt="AdAura Logo" class="logo" />
   </header>
+
+  <nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="tickets.html">Tickets</a>
+    </div>
+  </nav>
+
   <main>
     <h2>Welcome to <br>AdAura</h2>
     <p>We specialize in high-quality signage and printing solutions — including LED boards, visiting cards, gift items, and more. Browse through our products and services for custom solutions tailored to your needs.</p>
   </main>
+
   <footer>
     &copy; 2025 AdAura Signs & Prints
   </footer>
