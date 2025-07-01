@@ -1,121 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- products.html (Categorized + Grid + Hamburger Menu) --><!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Services - Ad Aura</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdAura | Products</title>
   <style>
     body {
-      background-color: #fffaf0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      margin: 0;
+      background-color: #fff8f2;
     }
-
-    .navbar {
-      background: linear-gradient(to right, #ff4e00, #ec9f05);
-    }
-
-    .navbar-brand, .nav-link {
-      color: #fff !important;
-      font-weight: bold;
-    }
-
-    h2 {
-      color: #dd2476;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .card {
-      border-left: 5px solid #ff4e00;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
-    }
-
-    footer {
-      background-color: #222;
+    header {
+      background-color: #ff5e00;
       color: white;
       text-align: center;
-      padding: 25px 0;
-      margin-top: 60px;
+      padding: 10px;
+    }
+    .logo {
+      height: 80px;
+      margin-bottom: 5px;
+    }
+    nav {
+      background: #333;
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      text-align: right;
+      display: block;
+    }
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      text-align: center;
+    }
+    .menu-links a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+    .menu-links a:hover {
+      background-color: #444;
+    }
+    @media (min-width: 600px) {
+      .menu-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .menu-icon {
+        display: none;
+      }
+    }
+    main {
+      padding: 30px 20px 80px;
+    }
+    h2, h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .card h4 {
+      font-size: 1.05rem;
+      margin: 10px 0 5px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Ad Aura</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></li>
-      </ul>
+  <header>
+    <img src="adaura-logo.png" alt="AdAura Logo" class="logo" />
+  </header>
+  <nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="tickets.html">Tickets</a>
     </div>
-  </div>
-</nav>
-
-<!-- Services Section -->
-<div class="container mt-5">
-  <h2>Our Services</h2>
-  <div class="row g-4 mt-4">
-  <div class="col-md-4">
-    <div class="card p-3">
-      <h5 class="card-title text-danger">LED Board Installation</h5>
-      <p class="card-text">Professional setup of Wi-Fi programmable LED signboards with perfect alignment & wiring.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card p-3">
-      <h5 class="card-title text-danger">Custom Print Design</h5>
-      <p class="card-text">Designing from scratch — visiting cards, pamphlets, bill books, flex & stickers.</p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card p-3">
-      <h5 class="card-title text-danger">Brand Promotion Packages</h5>
-      <p class="card-text">Helping your local shop stand out — through branding, LED signs & eye-catching display materials.</p>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card p-3">
-      <h5 class="card-title text-danger">Repair LED Boards</h5>
-      <p class="card-text">We repair all types of signboards including:</p>
-      <ul>
-        <li><strong>2D & 3D Boards</strong> – Fix broken letters, backlighting, or fading effects</li>
-        <li><strong>LED Flex Boards</strong> – Module, chip, and SMPS replacements</li>
-        <li><strong>Clipon & Blockout Boards</strong> – Frame, backlight, and surface damage repair</li>
-        <li><strong>Fabric Light Boxes</strong> – Fabric reprinting, stretch frame fixes, and lighting</li>
-        <li><strong>Neon Boards</strong> – Tube replacements, flickering issues, and brightness control</li>
-      </ul>
-    </div>
-  </div>
+  </nav>
+  <main>
+    <h2>Our Products</h2><h3>Sign Boards</h3>
+<div class="grid">
+  <div class="card"><img src="scroll-board.jpg" alt="Scroll Boards" /><h4>Scroll Boards</h4></div>
+  <div class="card"><img src="clipon-board.jpg" alt="Clipon Boards" /><h4>Clipon Boards</h4></div>
+  <div class="card"><img src="blockout-board.jpg" alt="Blockout Boards" /><h4>Blockout Boards</h4></div>
+  <div class="card"><img src="3d-letters.jpg" alt="3D Letter Boards" /><h4>3D Letter Boards</h4></div>
+  <div class="card"><img src="2d-letters.jpg" alt="2D Letter Boards" /><h4>2D Letter Boards</h4></div>
 </div>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>📞 8219190748 | 📧 amarkukreja@outlook.com</p>
-    <p>&copy; 2025 Ad Aura Signs & Prints</p>
-  </div>
-</footer>
+<h3>Printing</h3>
+<div class="grid">
+  <div class="card"><img src="visiting-card.jpg" alt="Visiting Cards" /><h4>Visiting Cards</h4></div>
+  <div class="card"><img src="pamphlet.jpg" alt="Pamphlets" /><h4>Pamphlets</h4></div>
+  <div class="card"><img src="bill-book.jpg" alt="Bill Books" /><h4>Bill Books</h4></div>
+  <div class="card"><img src="sticker.jpg" alt="Stickers" /><h4>Stickers</h4></div>
+</div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<h3>Websites & Gifts</h3>
+<div class="grid">
+  <div class="card"><img src="gifts.jpg" alt="Customized Gift Items" /><h4>Customized Gift Items</h4></div>
+  <div class="card"><img src="website.jpg" alt="Website Designs" /><h4>Website Designs</h4></div>
+</div>
 
+  </main>
+  <footer>
+    &copy; 2025 AdAura Signs & Prints
+  </footer>
 </body>
 </html>
