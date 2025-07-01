@@ -1,8 +1,8 @@
-<!-- Updated index.html with Hamburger Menu Navigation --><!DOCTYPE html><html lang="en">
+<!-- products.html (Beautiful Grid + Hamburger Menu) --><!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdAura | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdAura | Products</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -30,8 +30,8 @@
       color: white;
       padding: 10px;
       cursor: pointer;
-      display: block;
       text-align: right;
+      display: block;
     }
     .menu-links {
       display: none;
@@ -48,23 +48,6 @@
     .menu-links a:hover {
       background-color: #444;
     }
-    main {
-      padding: 30px 20px 80px;
-      text-align: center;
-    }
-    h2 {
-      margin-top: 10px;
-      margin-bottom: 15px;
-    }
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
     @media (min-width: 600px) {
       .menu-links {
         display: flex !important;
@@ -75,17 +58,56 @@
         display: none;
       }
     }
+    main {
+      padding: 30px 20px 80px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      margin: 10px 0 5px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
   <script>
     function toggleMenu() {
-      var menu = document.getElementById("menuLinks");
+      const menu = document.getElementById("menuLinks");
       menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
   </script>
 </head>
 <body>
   <header>
-    <img src="adaura-logo.png" alt="AdAura Logo" class="logo">
+    <img src="adaura-logo.png" alt="AdAura Logo" class="logo" />
   </header>
   <nav>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -98,8 +120,53 @@
     </div>
   </nav>
   <main>
-    <h2>Welcome to <br>AdAura</h2>
-    <p>We specialize in high-quality signage and printing solutions — including LED boards, visiting cards, gift items, and more. Browse through our products and services for custom solutions tailored to your needs.</p>
+    <h2>Our Products</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="scroll-board.jpg" alt="Scroll Boards" />
+        <h3>Scroll Boards</h3>
+      </div>
+      <div class="card">
+        <img src="clipon-board.jpg" alt="Clipon Boards" />
+        <h3>Clipon Boards</h3>
+      </div>
+      <div class="card">
+        <img src="blockout-board.jpg" alt="Blockout Boards" />
+        <h3>Blockout Boards</h3>
+      </div>
+      <div class="card">
+        <img src="3d-letters.jpg" alt="3D Letter Boards" />
+        <h3>3D Letter Boards</h3>
+      </div>
+      <div class="card">
+        <img src="2d-letters.jpg" alt="2D Letter Boards" />
+        <h3>2D Letter Boards</h3>
+      </div>
+      <div class="card">
+        <img src="visiting-card.jpg" alt="Visiting Cards" />
+        <h3>Visiting Cards</h3>
+      </div>
+      <div class="card">
+        <img src="pamphlet.jpg" alt="Pamphlets" />
+        <h3>Pamphlets</h3>
+      </div>
+      <div class="card">
+        <img src="bill-book.jpg" alt="Bill Books" />
+        <h3>Bill Books</h3>
+      </div>
+      <div class="card">
+        <img src="sticker.jpg" alt="Stickers" />
+        <h3>Stickers</h3>
+      </div>
+      <div class="card">
+        <img src="gifts.jpg" alt="Customized Gift Items" />
+        <h3>Customized Gift Items</h3>
+      </div>
+      <div class="card">
+        <img src="website.jpg" alt="Website Designs" />
+        <h3>Website Designs</h3>
+      </div>
+    </div>
   </main>
   <footer>
     &copy; 2025 AdAura Signs & Prints
