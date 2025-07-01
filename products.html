@@ -1,8 +1,8 @@
-<!-- Updated products.html (With Logo Header and Unified Styling) --><!DOCTYPE html><html lang="en">
+<!-- Updated index.html with Hamburger Menu Navigation --><!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdAura | Products</title>
+  <title>AdAura | Home</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,16 +20,41 @@
       height: 80px;
       margin-bottom: 5px;
     }
+    nav {
+      background: #333;
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      display: block;
+      text-align: right;
+    }
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      text-align: center;
+    }
+    .menu-links a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+    .menu-links a:hover {
+      background-color: #444;
+    }
     main {
       padding: 30px 20px 80px;
+      text-align: center;
     }
     h2 {
-      text-align: center;
       margin-top: 10px;
-    }
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
+      margin-bottom: 15px;
     }
     footer {
       background-color: #333;
@@ -40,27 +65,41 @@
       bottom: 0;
       width: 100%;
     }
+    @media (min-width: 600px) {
+      .menu-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .menu-icon {
+        display: none;
+      }
+    }
   </style>
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menuLinks");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </head>
 <body>
   <header>
     <img src="adaura-logo.png" alt="AdAura Logo" class="logo">
   </header>
+  <nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="tickets.html">Tickets</a>
+    </div>
+  </nav>
   <main>
-    <h2>Our Products</h2>
-    <ul>
-      <li>Scroll Boards</li>
-      <li>Clipon Boards</li>
-      <li>Blockout Boards</li>
-      <li>3D Letter Boards</li>
-      <li>2D Letter Boards</li>
-      <li>Visiting Cards</li>
-      <li>Pamphlets</li>
-      <li>Bill Books</li>
-      <li>Stickers</li>
-      <li>Customized Gift Items</li>
-      <li>Website Designs</li>
-    </ul>
+    <h2>Welcome to <br>AdAura</h2>
+    <p>We specialize in high-quality signage and printing solutions — including LED boards, visiting cards, gift items, and more. Browse through our products and services for custom solutions tailored to your needs.</p>
   </main>
   <footer>
     &copy; 2025 AdAura Signs & Prints
