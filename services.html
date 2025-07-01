@@ -1,8 +1,8 @@
-<!-- products.html (Categorized + Grid + Hamburger Menu) --><!DOCTYPE html><html lang="en">
+<!-- services.html (Hamburger Menu + Repair Service + Clean Layout) --><!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AdAura | Products</title>
+  <title>AdAura | Services</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,7 +23,9 @@
     nav {
       background: #333;
       overflow: hidden;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
     .menu-icon {
       font-size: 24px;
@@ -45,8 +47,9 @@
       text-decoration: none;
       display: block;
     }
-    .menu-links a:hover {
-      background-color: #444;
+    .menu-links a:hover,
+    .menu-links a.active {
+      background-color: #ff7000;
     }
     @media (min-width: 600px) {
       .menu-links {
@@ -59,35 +62,21 @@
       }
     }
     main {
-      padding: 30px 20px 80px;
+      padding: 30px 20px 100px;
     }
-    h2, h3 {
+    h2 {
       text-align: center;
+      margin-bottom: 25px;
+    }
+    ul {
+      list-style: square;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
+    li {
       margin-bottom: 15px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .card img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .card h4 {
-      font-size: 1.05rem;
-      margin: 10px 0 5px;
+      line-height: 1.5;
     }
     footer {
       background-color: #333;
@@ -108,44 +97,35 @@
 </head>
 <body>
   <header>
-    <img src="adaura-logo.png" alt="AdAura Logo" class="logo" />
-  </header>
-  <nav>
+    <a href="index.html"><img src="adaura-logo.png" alt="AdAura Logo" class="logo" /></a>
+  </header>  <nav>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="menu-links" id="menuLinks">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
-      <a href="services.html">Services</a>
+      <a href="services.html" class="active">Services</a>
       <a href="contact.html">Contact Us</a>
       <a href="tickets.html">Tickets</a>
     </div>
-  </nav>
-  <main>
-    <h2>Our Products</h2><h3>Sign Boards</h3>
-<div class="grid">
-  <div class="card"><img src="scroll-board.jpg" alt="Scroll Boards" /><h4>Scroll Boards</h4></div>
-  <div class="card"><img src="clipon-board.jpg" alt="Clipon Boards" /><h4>Clipon Boards</h4></div>
-  <div class="card"><img src="blockout-board.jpg" alt="Blockout Boards" /><h4>Blockout Boards</h4></div>
-  <div class="card"><img src="3d-letters.jpg" alt="3D Letter Boards" /><h4>3D Letter Boards</h4></div>
-  <div class="card"><img src="2d-letters.jpg" alt="2D Letter Boards" /><h4>2D Letter Boards</h4></div>
-</div>
-
-<h3>Printing</h3>
-<div class="grid">
-  <div class="card"><img src="visiting-card.jpg" alt="Visiting Cards" /><h4>Visiting Cards</h4></div>
-  <div class="card"><img src="pamphlet.jpg" alt="Pamphlets" /><h4>Pamphlets</h4></div>
-  <div class="card"><img src="bill-book.jpg" alt="Bill Books" /><h4>Bill Books</h4></div>
-  <div class="card"><img src="sticker.jpg" alt="Stickers" /><h4>Stickers</h4></div>
-</div>
-
-<h3>Websites & Gifts</h3>
-<div class="grid">
-  <div class="card"><img src="gifts.jpg" alt="Customized Gift Items" /><h4>Customized Gift Items</h4></div>
-  <div class="card"><img src="website.jpg" alt="Website Designs" /><h4>Website Designs</h4></div>
-</div>
-
-  </main>
-  <footer>
+  </nav>  <main>
+    <h2>Our Services</h2>
+    <ul>
+      <li><strong>Custom Sign Board Design:</strong> We create attractive signage including LED boards, 3D letters, neon signs, and more.</li>
+      <li><strong>Printing Solutions:</strong> High-quality printing for pamphlets, visiting cards, bill books, stickers, and other promotional material.</li>
+      <li><strong>Website Design & Hosting:</strong> Beautiful and responsive websites designed using HTML or WordPress — eCommerce-ready and SEO-optimized.</li>
+      <li><strong>Repair LED Boards:</strong> We repair and maintain various types of LED signage, including:
+        <ul>
+          <li>2D & 3D Letter Boards</li>
+          <li>LED Flex Boards</li>
+          <li>Clipon Boards</li>
+          <li>Blockout Boards</li>
+          <li>Fabric Boards</li>
+          <li>Neon Boards</li>
+        </ul>
+      </li>
+      <li><strong>Customized Gifting Solutions:</strong> We print and package personalized gifts for events and promotions.</li>
+    </ul>
+  </main>  <footer>
     &copy; 2025 AdAura Signs & Prints
   </footer>
 </body>
