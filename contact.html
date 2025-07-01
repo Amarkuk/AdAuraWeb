@@ -1,115 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- contact.html (White-Orange Theme with Hamburger Menu & Logo) --><!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us - Ad Aura</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | AdAura</title>
   <style>
     body {
-      background-color: #fffaf0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      margin: 0;
+      background-color: #fff;
+      color: #000;
     }
-
-    .navbar {
-      background: linear-gradient(to right, #ff4e00, #ec9f05);
-    }
-
-    .navbar-brand, .nav-link {
-      color: #fff !important;
-      font-weight: bold;
-    }
-
-    h2 {
-      color: #dd2476;
-      font-weight: bold;
+    header {
+      background-color: #ff5e00;
       text-align: center;
-      margin-top: 40px;
+      padding: 10px;
     }
-
-    .form-container {
-      max-width: 700px;
+    .logo {
+      height: 80px;
+      margin-bottom: 5px;
+    }
+    nav {
+      background: #111;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      text-align: right;
+      display: block;
+    }
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      text-align: center;
+    }
+    .menu-links a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+    .menu-links a:hover,
+    .menu-links a.active {
+      background-color: #ff7000;
+    }
+    @media (min-width: 600px) {
+      .menu-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .menu-icon {
+        display: none;
+      }
+    }
+    main {
+      padding: 30px 20px 80px;
+      max-width: 600px;
       margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
-
-    .btn-orange {
-      background: linear-gradient(to right, #ff512f, #dd2476);
-      color: white;
+    h2 {
+      text-align: center;
+      color: #ff5e00;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 10px;
       font-weight: bold;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #ff5e00;
+      color: white;
+      padding: 10px;
       border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 1rem;
+      cursor: pointer;
     }
-
-    .btn-orange:hover {
-      opacity: 0.9;
+    button:hover {
+      background-color: #e04d00;
     }
-
     footer {
-      background-color: #222;
+      background-color: #111;
       color: white;
       text-align: center;
-      padding: 25px 0;
-      margin-top: 60px;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Ad Aura</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></li>
-      </ul>
+  <header>
+    <a href="index.html"><img src="adaura-logo.png" alt="AdAura Logo" class="logo" /></a>
+  </header>  <nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact Us</a>
+      <a href="tickets.html">Tickets</a>
     </div>
-  </div>
-</nav>
+  </nav>  <main>
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required /><label for="email">Email</label>
+  <input type="email" id="email" name="email" required />
 
-<!-- Contact Form -->
-<div class="container mt-5">
-  <h2>Contact Us</h2>
-  <div class="form-container mt-4">
-    <form>
-      <div class="mb-3">
-        <label class="form-label">Full Name</label>
-        <input type="text" class="form-control" placeholder="Enter your full name">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Email address</label>
-        <input type="email" class="form-control" placeholder="you@example.com">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Message</label>
-        <textarea class="form-control" rows="5" placeholder="Write your message here..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-orange">Send Message</button>
-    </form>
-  </div>
-</div>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>📞 8219190748 | 📧 amarkukreja@outlook.com</p>
-    <p>&copy; 2025 Ad Aura Signs & Prints</p>
-  </div>
-</footer>
+  <button type="submit">Send Message</button>
+</form>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+  </main>  <footer>
+    &copy; 2025 AdAura Signs & Prints
+  </footer>
 </body>
 </html>
