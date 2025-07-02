@@ -1,14 +1,150 @@
-<main>
-  <h2>Submit a Support Ticket</h2>
-  <div class="responsive-form">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSftkV-5G8Db-Gc-BIByzYCPqskZBNxNH-BZB4HlSGI7_bl_Tg/viewform?embedded=true" 
-      width="100%" 
-      height="900" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0">
-      Loading…
-    </iframe>
-  </div>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Tickets | AdAura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #000;
+    }
+
+    header {
+      background-color: #ff5e00;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .logo {
+      height: 80px;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      background: #111;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      text-align: right;
+      display: block;
+    }
+
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .menu-links a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu-links a:hover,
+    .menu-links a.active {
+      background-color: #ff7000;
+    }
+
+    @media (min-width: 600px) {
+      .menu-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .menu-icon {
+        display: none;
+      }
+    }
+
+    main {
+      padding: 20px 10px 80px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff5e00;
+      margin-bottom: 20px;
+    }
+
+    .responsive-form {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 900px;
+      border: none;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="adaura-logo.png" alt="AdAura Logo" class="logo" />
+    </a>
+  </header>
+
+  <nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="tickets.html" class="active">Tickets</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Submit a Support Ticket</h2>
+    <div class="responsive-form">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSftkV-5G8Db-Gc-BIByzYCPqskZBNxNH-BZB4HlSGI7_bl_Tg/viewform?embedded=true" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 AdAura Signs & Prints
+  </footer>
+</body>
+</html>
