@@ -1,4 +1,5 @@
-<!-- tickets.html (White-Orange Theme with Hamburger Menu & Logo) --><!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -6,7 +7,6 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      font-size: 1rem;
       margin: 0;
       background-color: #fff;
       color: #000;
@@ -63,7 +63,7 @@
     }
     main {
       padding: 30px 20px 80px;
-      max-width: 600px;
+      max-width: 800px;
       margin: auto;
     }
     h2 {
@@ -71,33 +71,15 @@
       color: #ff5e00;
       margin-bottom: 20px;
     }
-    form {
-      display: flex;
-      flex-direction: column;
+    .responsive-form {
+      max-width: 100%;
+      overflow-x: hidden;
     }
-    label {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    input, textarea {
-      padding: 10px;
-      font-size: 1rem;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background-color: #ff5e00;
-      color: white;
-      padding: 10px;
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 900px;
       border: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #e04d00;
     }
     footer {
       background-color: #111;
@@ -119,7 +101,9 @@
 <body>
   <header>
     <a href="index.html"><img src="adaura-logo.png" alt="AdAura Logo" class="logo" /></a>
-  </header>  <nav>
+  </header>
+
+  <nav>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="menu-links" id="menuLinks">
       <a href="index.html">Home</a>
@@ -128,11 +112,22 @@
       <a href="contact.html">Contact Us</a>
       <a href="tickets.html" class="active">Tickets</a>
     </div>
-  </nav>  <main>
-    <h2>Submit a Support Ticket</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSftkV-5G8Db-Gc-BIByzYCPqskZBNxNH-BZB4HlSGI7_bl_Tg/viewform?embedded=true" width="640" height="855" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </nav>
 
-  </main>  <footer>
+  <main>
+    <h2>Submit a Support Ticket</h2>
+    <div class="responsive-form">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSftkV-5G8Db-Gc-BIByzYCPqskZBNxNH-BZB4HlSGI7_bl_Tg/viewform?embedded=true" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
     &copy; 2025 AdAura Signs & Prints
   </footer>
 </body>
